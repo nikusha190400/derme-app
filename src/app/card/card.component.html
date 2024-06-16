@@ -1,0 +1,20 @@
+<div class="flip-card" #cardEl>
+    <div class="flip-card-inner">
+        <div class="front-card" [ngClass]="product.sale ? 'sale-card' : ''">
+            <img [src]="product.imgSrc" alt="img">
+            <img class="sale" src="../../assets/svg/sale.svg" *ngIf="product.sale"/>
+        </div>
+        <div class="back-card" [ngClass]="product.sale ? 'sale-card' : ''">
+            <div class="info">
+                <h1>{{ product.name }}</h1>
+                <h3>{{ product.price }} ლარი </h3>
+                <h4>რაოდენობა: {{ product.amount }}</h4>
+                <p>{{ product.desc }}</p>
+                <div class="btns">
+                     <a class="view-details" (click)="viewDetails()">View Details</a>
+                    <img class="add-to-cart" src="../../assets/svg/add-to-cart.svg" alt="cart" (click)="onAddToCart()">
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

@@ -1,0 +1,62 @@
+section {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+.Details {
+  width: 500px;
+  height: fit-content;
+  display: grid;
+  grid-template-areas: 
+  'img img h2 h2'
+  'img img h3 h3'
+  'img img h3 h3'
+  'p p p p'
+  'p p p p'
+  'p p p p';
+  align-items: center;
+}
+
+img {
+  grid-area: img;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  margin: 15px;
+}
+
+h2 {
+  grid-area: h2;
+  color: white;
+  font-size: 32px;
+  margin: 0;
+}
+
+h3 {
+  grid-area: h3;
+  color: white;
+  font-size: 22px;
+  margin: 0;
+}
+.desc {
+  grid-area: p;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+}
+p {
+  background-color: rgba(128, 128, 128, 0.478);
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  letter-spacing: normal;
+  width: 100%;
+  border-radius: 10px;
+}

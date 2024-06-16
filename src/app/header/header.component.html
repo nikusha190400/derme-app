@@ -1,0 +1,25 @@
+<div class="header">
+    <nav class="burger-menu" [class]="menuType">
+        <a routerLink="/">მთავარი</a>
+        <a routerLink="/aboutus">ჩვენს შესახებ</a>
+        <a routerLink="/cart">ჩემი კალათა</a>
+    </nav>               
+        <div id="burger-menu-button" (click)="turnMenu()"><img src="../../assets/svg/icons8-menu.svg" alt="img"></div>
+        <div class="logo" id="logo">
+            <a href=""><img src="../../assets/images/logo (1).png" alt="logo"></a>
+        </div>
+        
+        <div class="log">
+            <button id="login" (click)="changeHover()" [class]="hoverClass">Log in</button>
+            <button (click)="changeHover()" [class]="hoverClass">sign up</button>
+        </div>
+        <div [class]="registerForm" id="loginw">
+            <div class="login-window">
+            <h3>sign in</h3>
+            <label class="input-group__label" for="username">username</label>
+            <input type="text" id="username" class="signinput" />
+            <label class="input-group__label" for="password">password</label>
+            <input type="password" id="password" class="signinput" />
+            </div>
+        </div>
+</div>

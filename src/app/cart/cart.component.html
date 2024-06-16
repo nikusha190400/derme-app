@@ -1,0 +1,24 @@
+<div class="cart-container">
+    <h1>ჩემი კალათა</h1>
+    <div *ngIf="cart.length === 0" class="empty-cart">
+      <p>კალათა ცარიელია</p>
+    </div>
+    <div *ngIf="cart.length > 0">
+      <div *ngFor="let product of cart" class="cart-item">
+        <img [src]="product.imgSrc" alt="{{ product.name }}">
+        <div class="product-info">
+          <h2>{{ product.name }}</h2>
+          <p>{{ product.desc }}</p>
+          <p>ფასი: {{ product.price }} ლარი</p>
+          <p>რაოდენობა: {{ product.quantity }}</p>
+          <button (click)="decreaseQuantity(product)" class="quantity">-</button>
+          <button (click)="increaseQuantity(product)" class="quantity">+</button>
+        </div>
+        <button (click)="removeFromCart(product)" class="delete">წაშლა</button>
+    </div>
+    <div class="cart-summary">
+        <h2>ჯამი: {{ getTotal() }} ლარი</h2>
+        <button (click)="checkout()">გადახდა</button>
+      </div>
+  </div>
+  

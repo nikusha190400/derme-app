@@ -1,0 +1,15 @@
+<section>
+  <div *ngIf="product" class="Details">
+    <img [src]="product.imgSrc" alt="img">
+    <h2>{{ product.name }}</h2>
+    <h3>ფასი: {{ product.price }} ლარი</h3>
+    <div class="desc">
+      <label for="">დახასიათება</label>
+    <p id="desc">{{ product.description }}</p>
+    </div>
+  </div>
+  <div *ngIf="!product">
+    <p>Product not found.</p>
+  </div>
+</section>
+  

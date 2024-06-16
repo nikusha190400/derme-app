@@ -1,0 +1,21 @@
+  <section>
+    <input type="text" [(ngModel)]="searchWord" (input)="filter()" placeholder="Search products..." class="search">
+    
+    <div class="filters">
+      <label>Price Range:</label>
+      <input type="number" [(ngModel)]="priceRange.min" (input)="filter()" placeholder="Min Price" class="numb-box">
+      <input type="number" [(ngModel)]="priceRange.max" (input)="filter()" placeholder="Max Price" class="numb-box">
+      <div class="buttons">
+        <button (click)="filter()">გაფილტვრა</button>
+        <button (click)="sales()" class="salebtn">აქციაშია</button>
+      </div>
+    </div>
+  
+    <div class="prod-class">
+      <app-card *ngFor="let product of filteredProducts"
+                [product]="product"
+                [addToCart]="addToCart.bind(this)">
+      </app-card>
+    </div>
+  </section>
+  
